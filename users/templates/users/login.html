@@ -8,19 +8,19 @@
         <fieldset class="form-group">
             <legend class="border-bottom mb-4" style="font-weight: bold;">Login</legend>
             {{form|crispy}}
+            <div class="border-top pt-3">
+                <small class="text-muted">
+                    Forgot your password? <a class="ml-2" href="{% url 'users:forgot_password' %}">Reset it</a>
+                </small>
+            </div>
+            <div class="border-top pt-3">
+                <small class="text-muted">You need to create an account?<a class="ml-2" href="{% url 'register' %}">Register</a></small>
+            </div>
         </fieldset>
         <div class="form-group">
             <button class="btn btn-outline-info" type="submit">Login</button>
         </div>
     </form>
-    <div class="border-top pt-3">
-        <small class="text-muted">
-            Forgot your password? <a class="ml-2" href="{% url 'users:forgot_password' %}">Reset it</a>
-        </small>
-    </div>
-    <div class="border-top pt-3">
-        <small class="text-muted">You need to create an account?<a class="ml-2" href="{% url 'register' %}">Register</a></small>
-    </div>
 </div>
 
 
