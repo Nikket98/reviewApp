@@ -1,0 +1,12 @@
+{% extends "reviewApp/base.html" %}
+
+{% block content %}
+    <div class="container my-5">
+        <h2 class="mb-4">Update Review</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary">Update review</button>
+        </form>
+    </div>
+{% endblock %}

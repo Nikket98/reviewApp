@@ -1,0 +1,26 @@
+{% extends "reviewApp/base.html" %}
+{% load static %}
+
+{% block content %}
+    <div class="container my-5">
+        <div class="card">
+            <div class="card-body">
+                <h2 class="card-title mb-4">Review by {{ review.author.username }}</h2>
+                <div class="d-flex align-items-center mb-4">
+                    
+                    {% if review.author.profile.image.url %}
+                        <img src="{{ review.author.profile.image.url }}" alt="Author photo" class="rounded-circle" width="100">
+                    {% else %}
+                        <img src="{% static 'images/blank-profile-picture-973460_960_720.webp' %}" alt="Default author photo" class="rounded-circle" width="100">
+                    {% endif %}
+                    <div class="ms-4">
+                        <p class="mb-1"><strong>Product:</strong> {{ review.product.name }}</p>
+                        <p class="mb-1"><strong>Rating:</strong> {{ review.rating }}&#11088;</p>
+                        <p class="mb-1"><strong>Date posted:</strong> {{ review.created_at|date:"F d, Y" }}</p>
+                    </div>
+                </div>
+                <p class="card-text">{{ review.content }}</p>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

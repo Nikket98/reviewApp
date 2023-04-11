@@ -1,0 +1,10 @@
+{% extends "reviewApp/base.html" %}
+
+{% block content %}
+<div class="content-section" style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+    <h2>You have now been logged out.<br>
+    Please log in again to continue.<br>
+      <a href="{% url 'login' %}" class="btn btn-primary">Log in</a></h2>
+    
+</div>
+{% endblock content %}
