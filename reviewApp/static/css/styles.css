@@ -292,3 +292,22 @@ html, body {
   margin-bottom: 0;
 }
 
+.image-slider {
+  position: relative;
+  overflow: hidden;
+  height: 300px;
+  margin-top: -30px;
+}
+.image-slider img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.image-slider img.active {
+  opacity: 1;
+}

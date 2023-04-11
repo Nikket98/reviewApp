@@ -1,6 +1,10 @@
 {% extends "reviewApp/base.html" %}
 
 {% block content %}
+
+
+
+
 <div class="jumbotron jumbotron-fluid bg-light text-center mt-5"style="margin-left: 0px;">
   <div class="container-fluid">
     <h1 class="display-4 col-lg-19">Welcome to TechRate</h1>
@@ -10,47 +14,69 @@
     <a class="btn btn-primary btn-lg" href="#" style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; font-size: 1.2rem; font-weight: 400;" role="button">Learn more</a>
   </div>
 </div>
+<div class="image-slider">
+  <img src="https://img.rasset.ie/00187799-700.jpg?text=Image+1" alt="Slider Image 1" class="active">
+  <img src="https://wallpapercave.com/wp/wp8971605.jpg?text=Image+2" alt="Slider Image 2">
+  <img src="https://c0.wallpaperflare.com/preview/265/77/78/apple-macbook-laptop-minimum.jpg?text=Image+3" alt="Slider Image 3">
+  <img src="https://img.rasset.ie/00187799-700.jpg?text=Image+1" alt="Slider Image 1">
+  <img src="https://wallpapercave.com/wp/wp8971605.jpg?text=Image+2" alt="Slider Image 2">
+  <img src="https://c0.wallpaperflare.com/preview/265/77/78/apple-macbook-laptop-minimum.jpg?text=Image+3" alt="Slider Image 3">
+</div>
 
+<script>
+  const images = document.querySelectorAll('.image-slider img');
+  let index = 0;
 
-<div class="row">
-  <div class="col-md-4">
-    <h2>Top phones</h2>
-    <div class="card mb-4">
-      <a href="https://www.apple.com/iphone-13-pro-max/" target="_blank"><img src="https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/81pUYPe0E2L._AC_SX679_.jpg" class="card-img-top" alt="iPhone 13 Pro Max"></a>
-      <div class="card-body">
-        <h5 class="card-title"><a href="https://www.apple.com/iphone-13-pro-max/" target="_blank">iPhone 13 Pro Max</a></h5>
-        <p class="card-text">The Most Advanced iPhone Yet.</p>
-        <a href="https://www.apple.com/iphone-13-pro-max/" target="_blank" class="btn btn-primary">View Product</a>
+  setInterval(() => {
+    images[index].classList.remove('active');
+    index = (index + 1) % images.length;
+    images[index].classList.add('active');
+  }, 5000);
+</script>
+
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card mb-4">
+        <a href="https://www.apple.com/by/iphone-13-pro/" target="_blank"><img src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/refurb-iphone-13-pro-max-gold-2023?wid=1144&hei=1144&fmt=jpeg&qlt=90&.v=1679072988850" class="card-img-top" alt="iPhone 13 Pro Max"></a>
+        <div class="card-body">
+          <h2 class="card-title">Top Phones</h2>
+          <h5 class="card-subtitle mb-2 text-muted">iPhone 13 Pro Max</h5>
+          <p class="card-text">The Most Advanced iPhone Yet.</p>
+          <a href="https://www.apple.com/iphone-13-pro-max/" target="_blank" class="btn btn-primary">View Product</a>
+        </div>
       </div>
     </div>
     <div class="col-md-4">
-      <h2>Top Smartwatches</h2>
       <div class="card mb-4">
         <a href="https://www.apple.com/watch/" target="_blank"><img src="https://via.placeholder.com/300x500.png?text=Apple+Watch+Series+7" class="card-img-top" alt="Apple Watch Series 7"></a>
         <div class="card-body">
-          <h5 class="card-title"><a href="https://www.apple.com/watch/" target="_blank">Apple Watch Series 7</a></h5>
+          <h2 class="card-title">Top Smartwatches</h2>
+          <h5 class="card-subtitle mb-2 text-muted">Apple Watch Series 7</h5>
           <p class="card-text">The Most Advanced Smartwatch from Apple.</p>
           <a href="https://www.apple.com/watch/" target="_blank" class="btn btn-primary">View Product</a>
         </div>
       </div>
+    </div>
+    <div class="col-md-4">
       <div class="card mb-4">
-        <a href="https://www.samsung.com/global/galaxy/galaxy-watch4/" target="_blank"><img src="https://via.placeholder.com/300x500.png?text=Samsung+Galaxy+Watch4" class="card-img-top" alt="Samsung Galaxy Watch4"></a>
+        <a href="https://www.samsung.com/us/mobile/tablets/galaxy-tab-s7/buy/" target="_blank"><img src="https://via.placeholder.com/300x500.png?text=Samsung+Galaxy+Tab+S7" class="card-img-top" alt="Samsung Galaxy Tab S7"></a>
         <div class="card-body">
-          <h5 class="card-title"><a href="https://www.samsung.com/global/galaxy/galaxy-watch4/" target="_blank">Samsung Galaxy Watch4</a></h5>
-          <p class="card-text">The Latest Smartwatch from Samsung with Impressive Features.</p>
-          <a href="https://www.samsung.com/global/galaxy/galaxy-watch4/" target="_blank" class="btn btn-primary">View Product</a>
-        </div>
-      </div>
-      <div class="card mb-4">
-        <a href="https://www.fitbit.com/global/us/products/smartwatches/fitbit-versa-3" target="_blank"><img src="https://via.placeholder.com/300x500.png?text=Fitbit+Versa+3" class="card-img-top" alt="Fitbit Versa 3"></a>
-        <div class="card-body">
-          <h5 class="card-title"><a href="https://www.fitbit.com/global/us/products/smartwatches/fitbit-versa-3" target="_blank">Fitbit Versa 3</a></h5>
-          <p class="card-text">A Popular Smartwatch with Health and Fitness Features.</p>
-          <a href="https://www.fitbit.com/global/us/products/smartwatches/fitbit-versa-3" target="_blank" class="btn btn-primary">View Product</a>
+          <h2 class="card-title">Top Tablets</h2>
+          <h5 class="card-subtitle mb-2 text-muted">Samsung Galaxy Tab S7</h5>
+          <p class="card-text">The Best Android Tablet with a Great Display.</p>
+          <a href="https://www.samsung.com/us/mobile/tablets/galaxy-tab-s7/buy/" target="_blank" class="btn btn-primary">View Product</a>
         </div>
       </div>
     </div>
-    
+  </div>
+</div>
+
+          
+      
   </div>
 </div>
 {% endblock %}
