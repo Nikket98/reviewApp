@@ -105,7 +105,10 @@ body {
 
 .row {
   margin-top: 3rem;
+  
 }
+
+
 
 .col-md-6 {
   padding: 0 2rem;
@@ -137,7 +140,7 @@ h1 {
   font-size: 48px;
   font-weight: bold;
   margin-bottom: 32px;
-  color: #212529;
+  color: #568abe;
 }
 
 /* p styling */
@@ -201,21 +204,7 @@ hr {
   height: 200px;
   object-fit: cover;
 }
-.animated-font {
-  animation: pulse 2s infinite;
-}
 
-@keyframes pulse {
-  0% {
-    font-size: 4rem;
-  }
-  50% {
-    font-size: 4.5rem;
-  }
-  100% {
-    font-size: 4rem;
-  }
-}
 .container {
   width: 100%;
 }
@@ -307,4 +296,14 @@ html, body {
 }
 .image-slider img.active {
   opacity: 1;
+}
+.btn-group-sm .btn {
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  margin-right: 0.5rem;
+  font-size: 14px;
+}
+
+.content-wrapper {
+  flex: 1;
 }

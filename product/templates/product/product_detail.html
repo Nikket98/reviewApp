@@ -30,13 +30,17 @@
         {% endif %}
 
         <p>{{ review.content }}</p>
-        <a href="{% url 'review-detail' pk=review.pk %}">Read more</a>
-
-        {% if user == review.author %}
-        <a href="{% url 'update-review' pk=review.id %}">Update Review</a>
-        <a href="{% url 'delete-review' pk=review.id %}">Delete Review</a>
-
-        {% endif %}
+        <div class="btn-group-sm" role="group" aria-label="Review actions">
+          <p><a href="{% url 'review-detail' pk=review.pk %}" class="btn btn-primary mr-2">Read more</a></p>
+        
+          {% if user == review.author %}
+            <p><a href="{% url 'update-review' pk=review.id %}" class="btn btn-warning mr-2">Update Review</a></p>
+            <a href="{% url 'delete-review' pk=review.id %}" class="btn btn-danger mr-2">Delete Review</a>
+          {% endif %}
+        </div>
+        
+        
+        
       </div>
       {% empty %}
       <p>No reviews yet.</p>

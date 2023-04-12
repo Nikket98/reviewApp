@@ -6,17 +6,18 @@ from .models import Profile
 class UserRegisterForm(UserCreationForm):
     email = forms.EmailField()
     security_question = forms.ChoiceField(choices=[
-        ('pet', 'What was the name of your first pet?'),
-        ('city', 'In what city were you born?'),
-        ('mother', "What is your mother's maiden name?"),
-        ('school', 'What was the name of your first school?'),
-        ('color', 'What is your favorite color?')
+        ('What was the name of your first pet?', 'What was the name of your first pet?'),
+        ('In what city were you born?', 'In what city were you born?'),
+        ("What is your mother's maiden name?", "What is your mother's maiden name?"),
+        ('What was the name of your first school?', 'What was the name of your first school?'),
+        ('What is your favorite color?', 'What is your favorite color?')
     ])
     security_answer = forms.CharField(max_length=100)
 
     class Meta:
         model = User
-        fields = ['username', 'email', 'password1', 'password2', 'security_question','security_answer']
+        fields = ['username', 'email', 'password1', 'password2', 'security_question', 'security_answer']
+
 
 class UserUpdateForm(forms.ModelForm):
     email = forms.EmailField()
