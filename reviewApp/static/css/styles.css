@@ -82,10 +82,11 @@ body {
     margin-left: auto;
 }
 .jumbotron {
-  background-color: #f8f9fa;
+  
   color: #212529;
   padding: 3rem;
   margin-bottom: 2rem;
+  background-color: #0a0e11;
 }
 
 .jumbotron h1 {
@@ -98,7 +99,7 @@ body {
 }
 
 .jumbotron hr {
-  border-color: #959697;
+  border-color: #a3a6a8;
   margin: 1rem 0;
 }
 
@@ -130,10 +131,6 @@ body {
   border-color: #0062cc;
 }
 /* jumbotron styling */
-.jumbotron {
-  background-color: #f8f9fa;
-  padding: 10px 0;
-}
 
 /* h1 styling */
 h1 {
@@ -295,7 +292,7 @@ html, body {
 .image-slider {
   position: relative;
   overflow: hidden;
-  height: 300px;
+  height: 500px;
   margin-top: -30px;
 }
 .image-slider img {
