@@ -1,7 +1,7 @@
 {% extends "reviewApp/base.html" %}
 
 {% block content %}
-
+{% load static %}
 
 
 
@@ -15,12 +15,10 @@
   </div>
 </div>
 <div class="image-slider">
-  <img src="https://img.rasset.ie/00187799-700.jpg?text=Image+1" alt="Slider Image 1" class="active">
-  <img src="https://wallpapercave.com/wp/wp8971605.jpg?text=Image+2" alt="Slider Image 2">
-  <img src="https://c0.wallpaperflare.com/preview/265/77/78/apple-macbook-laptop-minimum.jpg?text=Image+3" alt="Slider Image 3">
-  <img src="https://img.rasset.ie/00187799-700.jpg?text=Image+1" alt="Slider Image 1">
-  <img src="https://wallpapercave.com/wp/wp8971605.jpg?text=Image+2" alt="Slider Image 2">
-  <img src="https://c0.wallpaperflare.com/preview/265/77/78/apple-macbook-laptop-minimum.jpg?text=Image+3" alt="Slider Image 3">
+  <img src="{% static 'images/laptop1.jpg' %}" alt="Slider Image 1" class="active">
+  <img src="{% static 'images/phone1.jpg' %}" alt="Slider Image 2">
+  <img src="{% static 'images/watch1.jpg' %}" alt="Slider Image 3">
+
 </div>
 
 <script>
