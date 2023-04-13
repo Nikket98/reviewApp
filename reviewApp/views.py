@@ -29,6 +29,13 @@ def report(request):
 def contact(request):
     return render(request, 'reviewApp/contact.html', {'title': 'Contact Us'})
 
+
+def privacy_policy(request):
+    return render(request, 'reviewApp/privacy_policy.html')
+
+def terms(request):
+    return render(request, 'reviewApp/terms.html')
+
 class PostListView(ListView):
     model = Issue
     template_name = 'reviewApp/report.html'

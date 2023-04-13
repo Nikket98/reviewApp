@@ -1,6 +1,6 @@
 from django.urls import path
 from . import views
-from .views import PostListView, PostDetailView, PostCreateView, PostUpdateView, PostDeleteView, UserPostListView
+from .views import PostListView, PostDetailView,privacy_policy, PostCreateView, PostUpdateView, PostDeleteView, UserPostListView
 
 urlpatterns =[
     path('', views.home, name='reviewApp-home'),
@@ -13,4 +13,6 @@ urlpatterns =[
     path('user/<str:username>', UserPostListView.as_view(), name='user-issues'),
     path('contact/', views.contact_view, name='reviewApp-contact'),
     path('success/', views.success_view, name='reviewApp-success'),
+    path('privacy-policy/', privacy_policy, name='privacy_policy'),
+    path('terms/', views.terms, name='terms'),
 ]
