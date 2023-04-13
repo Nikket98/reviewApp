@@ -1,13 +1,21 @@
+<!-- This code extends the base.html template and defines the content block. -->
 {% extends "reviewApp/base.html" %}
 
 {% block content %}
-    <div class="container my-5">
-        <h2>Confirm Delete</h2>
-        <p>Are you sure you want to delete this review?</p>
-        <form method="post">
-            {% csrf_token %}
-            <button type="submit" class="btn btn-danger">Yes, delete</button>
-            <a href="{% url 'product-detail' pk=object.product.pk %}" class="btn btn-secondary">Cancel</a>
-        </form>
-    </div>
+<!-- This div element sets the container for the content. -->
+<div class="container my-5">
+    <!-- This h2 element displays the confirmation message for deleting a review. -->
+    <h2>Confirm Delete</h2>
+    <!-- This p element displays a message asking the user to confirm the deletion. -->
+    <p>Are you sure you want to delete this review?</p>
+    <!-- This form element defines the form for confirming the deletion. -->
+    <form method="post">
+        <!-- This csrf_token element is used to prevent cross-site request forgery. -->
+        {% csrf_token %}
+        <!-- This button element defines a button for confirming the deletion. -->
+        <button type="submit" class="btn btn-danger">Yes, delete</button>
+        <!-- This a element defines a link to cancel the deletion and go back to the product detail page. -->
+        <a href="{% url 'product-detail' pk=object.product.pk %}" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
 {% endblock %}

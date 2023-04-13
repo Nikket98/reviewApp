@@ -2,21 +2,28 @@ from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from .models import Profile
+from django_countries.fields import CountryField
+from django_countries.widgets import CountrySelectWidget
+
 
 class UserRegisterForm(UserCreationForm):
     email = forms.EmailField()
     security_question = forms.ChoiceField(choices=[
-        ('What was the name of your first pet?', 'What was the name of your first pet?'),
+        ('What was the name of your first pet?',
+         'What was the name of your first pet?'),
         ('In what city were you born?', 'In what city were you born?'),
-        ("What is your mother's maiden name?", "What is your mother's maiden name?"),
-        ('What was the name of your first school?', 'What was the name of your first school?'),
+        ("What is your mother's maiden name?",
+         "What is your mother's maiden name?"),
+        ('What was the name of your first school?',
+         'What was the name of your first school?'),
         ('What is your favorite color?', 'What is your favorite color?')
     ])
     security_answer = forms.CharField(max_length=100)
 
     class Meta:
         model = User
-        fields = ['username', 'email', 'password1', 'password2', 'security_question', 'security_answer']
+        fields = ['username', 'email', 'password1',
+            'password2', 'security_question', 'security_answer']
 
 
 class UserUpdateForm(forms.ModelForm):
@@ -26,7 +33,12 @@ class UserUpdateForm(forms.ModelForm):
         model = User
         fields = ['username', 'email']
 
+
 class ProfileUpdateForm(forms.ModelForm):
+    country = CountryField(default='GB').formfield(
+        widget=CountrySelectWidget(attrs={'class': 'custom-select'})
+    )
+
     class Meta:
         model = Profile
         fields = [
@@ -34,7 +46,7 @@ class ProfileUpdateForm(forms.ModelForm):
             'image',
             'date_of_birth',
             'address',
-            'city_town',
+            'city_or_town',
             'country',
             'security_question',  
             'security_answer'  
@@ -42,6 +54,7 @@ class ProfileUpdateForm(forms.ModelForm):
         widgets = {
             'date_of_birth': forms.DateInput(attrs={'type': 'date'})
         }
+
 
 class ForgotPasswordForm(forms.Form):
     email = forms.EmailField()

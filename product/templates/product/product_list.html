@@ -1,28 +1,40 @@
 {% extends "reviewApp/base.html" %}
 
 {% block content %}
-
+  <!-- Opening div for the main container -->
   <div class="container my-5">
-    <h1 class="text-center mb-5 offset-lg-6"style="margin-top: 6rem;">Products</h1>
+    <!-- Main heading with a centered text and an offset of 6 columns on large screens -->
+    <h1 class="text-center mb-5 offset-lg-6" style="margin-top: 6rem;">Products</h1>
+    <!-- Opening div for the row with an offset of 1 column on large screens -->
     <div class="row offset-lg-1">
       {% for product in products %}
+        <!-- Column for each product with a margin at the bottom -->
         <div class="col-md-4 mb-4">
+          <!-- Card for displaying the product details -->
           <div class="card">
             {% if product.photo %}
+              <!-- Displaying the product photo if available -->
               <img src="{{ product.photo.url }}" alt="{{ product.name }}" class="card-img-top">
             {% endif %}
+            <!-- Card body with the product details -->
             <div class="card-body">
+              <!-- Product name as the card title -->
               <h5 class="card-title">{{ product.name }}</h5>
+              <!-- Product description truncated to 20 words -->
               <p class="card-text">{{ product.description|truncatewords:20 }}</p>
+              <!-- Button for viewing the product details -->
               <a href="{% url 'product-detail' pk=product.pk %}" class="btn btn-primary">View Details</a>
             </div>
           </div>
         </div>
       {% empty %}
+        <!-- Message to be displayed when there are no products available -->
         <div class="col-md-12">
           <p>No products available.</p>
         </div>
       {% endfor %}
     </div>
+    <!-- Closing div for the row -->
   </div>
+  <!-- Closing div for the main container -->
 {% endblock content %}

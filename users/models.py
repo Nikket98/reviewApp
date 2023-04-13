@@ -21,7 +21,7 @@ class Profile(models.Model):
     image = models.ImageField(default='default.png', upload_to='profile_pics')
     date_of_birth = models.DateField(null=True, blank=True)
     address = models.CharField(max_length=100, blank=True)
-    city_town = models.CharField(max_length=50, blank=True)
+    city_or_town = models.CharField(max_length=50, blank=True)
     country = models.CharField(max_length=50, blank=True)
     full_name = models.CharField(max_length=50, blank=True)
     security_question = models.CharField(max_length=100, choices=SECURITY_QUESTIONS, default='')  

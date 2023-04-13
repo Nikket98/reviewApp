@@ -12,7 +12,7 @@ from django.contrib.auth.models import User
 from django.contrib import messages
 from django.http import HttpResponseNotAllowed
 from django.shortcuts import get_object_or_404
-
+from .forms import ProfileUpdateForm
 
 def register(request):
     if request.method == 'POST':
@@ -111,6 +111,7 @@ def profile(request):
     else:
         u_form = UserUpdateForm(instance=request.user)
         p_form = ProfileUpdateForm(instance=request.user.profile)
+ 
 
     context = {
         'u_form': u_form,

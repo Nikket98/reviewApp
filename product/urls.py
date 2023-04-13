@@ -8,7 +8,7 @@ from .views import (
 )
 
 urlpatterns = [
-    # Other URL patterns
+    
     path('<int:pk>/', views.product_detail, name='product-detail'),
     path('review/<int:pk>/', views.review_detail, name='review-detail'),
     re_path(r'^products/', views.product_list, name='product-list'),

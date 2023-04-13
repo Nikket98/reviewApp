@@ -1,7 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from .models import Product, Review
-from .forms import ReviewForm
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views.generic import UpdateView, DeleteView
 from .forms import ReviewForm, ReviewUpdateForm

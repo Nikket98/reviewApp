@@ -1,142 +1,165 @@
+/* Set the background color and font color for the entire body */
 body {
-    background: #fafafa;
-    color: #333333;
-    
-  }
-  .site-header .navbar-nav .nav-link {
-    font-size: 18px;
-    font-family: Arial, sans-serif;
+  background: #fafafa;
+  color: #333333;
 }
+
+/* Style the links in the navbar */
+.site-header .navbar-nav .nav-link {
+  font-size: 18px;
+  /* Set the font size to 18 pixels */
+  font-family: Arial, sans-serif;
+  /* Set the font family to Arial or a generic sans-serif font */
+}
+
+/* Set the height of the navbar to 80 pixels */
 .navbar {
   height: 80px;
 }
 
- 
-  
-  .site-header .navbar-nav .nav-link {
-    color: #cbd5db;
-  }
-  
-  .site-header .navbar-nav .nav-link:hover {
-    color: #ffffff;
-  }
-  
-  .site-header .navbar-nav .nav-link.active {
-    font-weight: 500;
-  }
-  
-  .site-header .navbar-nav .nav-link {
-    font-size: 18px;
-    font-family: Arial, sans-serif;
+/* Style the links in the navbar */
+.site-header .navbar-nav .nav-link {
+  color: #cbd5db;
+  /* Set the color to a light gray */
 }
 
-  
-  .article-title {
-    color: #444444;
-  }
-  
-  a.article-title:hover {
-    color: #428bca;
-    text-decoration: none;
-  }
-  
-  
-  
-  .article-img {
-    height: 65px;
-    width: 65px;
-    margin-right: 16px;
-  }
-  
-  .article-metadata {
-    padding-bottom: 1px;
-    margin-bottom: 4px;
-    border-bottom: 1px solid #e3e3e3
-  }
-  
-  .article-svg {
-    width: 25px;
-    height: 25px;
-    vertical-align: middle;
-  }
-  
-  .account-img {
-    height: 125px;
-    width: 125px;
-    margin-right: 20px;
-    margin-bottom: 16px;
-  }
-  
-  .account-heading {
-    font-size: 2.5rem;
-  }
-  
-  .article-metadata a:hover {
-    color: #333;
-    text-decoration: none;
-  }
-  .jumbotron {
-    
-    padding: 1rem;
-    margin-bottom: 0;
-    margin-left: auto;
+/* Style the links in the navbar when hovered over */
+.site-header .navbar-nav .nav-link:hover {
+  color: #ffffff;
+  /* Set the color to white */
 }
+
+/* Style the active link in the navbar */
+.site-header .navbar-nav .nav-link.active {
+  font-weight: 500;
+  /* Set the font weight to bold */
+}
+
+/* Style the article titles */
+.article-title {
+  color: #444444;
+  /* Set the color to a dark gray */
+}
+
+/* Style the article title links when hovered over */
+a.article-title:hover {
+  color: #428bca;
+  /* Set the color to a light blue */
+  text-decoration: none;
+  /* Remove the underline on the link */
+}
+
+/* Style the article images */
+.article-img {
+  height: 65px;
+  /* Set the height to 65 pixels */
+  width: 65px;
+  /* Set the width to 65 pixels */
+  margin-right: 16px;
+  /* Set the right margin to 16 pixels */
+}
+
+
+/* styles for article metadata */
+.article-metadata {
+  padding-bottom: 1px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid #e3e3e3
+}
+
+/* styles for SVG images */
+.article-svg {
+  width: 25px;
+  height: 25px;
+  vertical-align: middle;
+}
+
+/* styles for account profile images */
+.account-img {
+  height: 125px;
+  width: 125px;
+  margin-right: 20px;
+  margin-bottom: 16px;
+}
+
+/* styles for account profile heading */
+.account-heading {
+  font-size: 2.5rem;
+}
+
+/* styles for article metadata links on hover */
+.article-metadata a:hover {
+  color: #333;
+  text-decoration: none;
+}
+
+/* styles for jumbotron section */
 .jumbotron {
-  
+  padding: 1rem;
+  margin-bottom: 0;
+  margin-left: auto;
+}
+
+.jumbotron {
   color: #212529;
   padding: 3rem;
   margin-bottom: 2rem;
   background-color: #0a0e11;
-  
 }
 
+/* styles for jumbotron heading */
 .jumbotron h1 {
   font-size: 4.5rem;
   font-weight: bold;
 }
 
+/* styles for jumbotron text */
 .jumbotron p {
   font-size: 1.5rem;
 }
 
+/* styles for horizontal line in jumbotron section */
 .jumbotron hr {
   border-color: #a3a6a8;
   margin: 1rem 0;
 }
 
+/* styles for row layout */
 .row {
   margin-top: 3rem;
-  
 }
 
-
-
+/* styles for columns in row layout */
 .col-md-6 {
   padding: 0 2rem;
 }
 
+/* styles for headings within column layout */
 .col-md-6 h2 {
   font-size: 2rem;
   font-weight: bold;
   margin-bottom: 1rem;
 }
 
+
+/* Styling for list items inside a col-md-6 div */
 .col-md-6 li {
   margin-bottom: 0.5rem;
 }
 
+/* Styling for primary buttons */
 .btn-primary {
   background-color: #007bff;
   border-color: #007bff;
 }
 
+/* Styling for primary buttons on hover */
 .btn-primary:hover {
   background-color: #0069d9;
   border-color: #0062cc;
 }
-/* jumbotron styling */
 
-/* h1 styling */
+/* Styling for h1 elements */
 h1 {
   font-size: 48px;
   font-weight: bold;
@@ -144,7 +167,7 @@ h1 {
   color: #568abe;
 }
 
-/* p styling */
+/* Styling for p elements */
 p {
   font-size: 24px;
   font-weight: 400;
@@ -153,20 +176,20 @@ p {
   color: #6c757d;
 }
 
-/* hr styling */
+/* Styling for horizontal rules */
 hr {
   border-color: #6c757d;
   margin: 40px 0;
 }
 
-/* card styling */
+/* Styling for cards */
 .card {
   border: none;
   background-color: #fff;
-  box-shadow: 0 4px 6px rgba(0,0,0,.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, .1);
 }
 
-/* card title styling */
+/* Styling for card titles */
 .card-title {
   font-size: 24px;
   font-weight: bold;
@@ -174,7 +197,7 @@ hr {
   color: #212529;
 }
 
-/* card text styling */
+/* Styling for card text */
 .card-text {
   font-size: 16px;
   font-weight: 400;
@@ -182,7 +205,7 @@ hr {
   color: #6c757d;
 }
 
-/* button styling */
+/* Styling for buttons */
 .btn {
   background-color: #007bff;
   color: #fff;
@@ -194,53 +217,61 @@ hr {
   transition: all .3s;
 }
 
-/* button hover styling */
+/* Styling for buttons on hover */
 .btn:hover {
   background-color: #0069d9;
   cursor: pointer;
 }
 
-/* image styling */
+
+/*Sets the height of the top image within the card, and specifies how the image should be scaled to fit its box */
 .card-img-top {
   height: 200px;
   object-fit: cover;
 }
 
+/* Sets the width of the container to be 100% of its parent element */
 .container {
   width: 100%;
 }
 
+/* Adds margin to the content section and aligns it to the right */
 .content-section {
   margin-top: 105px;
-  
-  margin-left:500px;
+  margin-left: 500px;
 }
+
+/* Sets the maximum width of the container and centers it within the page */
 .container {
   max-width: 960px;
   margin: 0 auto;
 }
 
+/* Specifies the maximum width of images to be 100% of their parent element */
 img {
   max-width: 100%;
 }
 
+/* Styles for the h1 heading element */
 h1 {
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  
 }
 
+/* Removes the bullet points from unordered lists */
 ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
+/* Set bottom margin for all list items */
 li {
   margin-bottom: 0.5rem;
 }
 
+/* Styles for primary button */
 .btn-primary {
   background-color: #007bff;
   border-color: #007bff;
@@ -251,21 +282,26 @@ li {
   margin-top: 2rem;
 }
 
+/* Styles for primary button when hovered */
 .btn-primary:hover {
   background-color: #0069d9;
   border-color: #0062cc;
   color: #fff;
 }
 
+/* Set bottom margin for an element */
 .mb-4 {
   margin-bottom: 1.5rem;
 }
 
-html, body {
+/* Reset margin and padding for HTML and body tags */
+html,
+body {
   margin: 0;
   padding: 0;
 }
 
+/* Styles for messages container */
 .messages-container {
   position: fixed;
   top: 80px;
@@ -273,19 +309,22 @@ html, body {
   transform: translateX(-50%);
   z-index: 9999;
   width: 100%;
-  
 }
 
+/* Styles for alert element */
 .alert {
   margin-bottom: 0;
 }
 
+/* Styles for image slider container */
 .image-slider {
   position: relative;
   overflow: hidden;
   height: 500px;
   margin-top: -30px;
 }
+
+/* Styles for images inside image slider */
 .image-slider img {
   position: absolute;
   left: 0;
@@ -296,17 +335,40 @@ html, body {
   height: 100%;
   object-fit: cover;
 }
+
+/* Set opacity to 1 for the currently active image in the image slider */
 .image-slider img.active {
   opacity: 1;
-}
-.btn-group-sm .btn {
+  }
+  
+  /* Style for small buttons in button group */
+  .btn-group-sm .btn {
   padding: 0.5rem 1rem;
   border-radius: 0.25rem;
   margin-right: 0.5rem;
   font-size: 14px;
-}
-
-.content-wrapper {
+  }
+  
+  /* Flexbox styling for the content wrapper element */
+  .content-wrapper {
   flex: 1;
+  }
+
+  .profile-info {
+    margin-top: 1rem;
 }
 
+.profile-info p {
+  font-family: 'Roboto', sans-serif;
+  margin-bottom: 0.5rem;
+}
+
+.profile-info strong {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 600;
+  margin-right: 0.5rem;
+}
+.rounded-circle
+{
+  margin-right: 2rem;
+}

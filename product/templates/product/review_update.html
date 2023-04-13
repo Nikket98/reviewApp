@@ -1,12 +1,12 @@
-{% extends "reviewApp/base.html" %}
+{% extends "reviewApp/base.html" %} <!-- Extends the base template -->
 
-{% block content %}
-    <div class="container my-5">
-        <h2 class="mb-4">Update Review</h2>
-        <form method="post">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit" class="btn btn-primary">Update review</button>
+{% block content %} <!-- Defines a content block -->
+    <div class="container my-5"> <!-- Container for the content -->
+        <h2 class="mb-4">Update Review</h2> <!-- Title for the update review form -->
+        <form method="post"> <!-- Form for updating the review -->
+            {% csrf_token %} <!-- Generates a CSRF token for the form -->
+            {{ form.as_p }} <!-- Renders the form as HTML -->
+            <button type="submit" class="btn btn-primary">Update review</button> <!-- Button to submit the form -->
         </form>
     </div>
-{% endblock %}
+{% endblock %} <!-- Ends the content block -->

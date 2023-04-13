@@ -8,12 +8,15 @@
         <div class="media-body">
             <h2 class="account-heading">{{user.profile.full_name}}</h2>
             
-            <p class="text-secondary">{{user.username}}</p>
-            <p class="text-secondary">{{user.email}}</p>
-            <p class="text-secondary">{{user.profile.date_of_birth}}</p>
-            <p class="text-secondary">{{user.profile.address}}</p>
-            <p class="text-secondary">{{user.profile.city_town}}</p>
-            <p class="text-secondary">{{user.profile.country}}</p>
+            <div class="profile-info">
+                <p><strong>Username:</strong> <span class="text-secondary">{{ user.username }}</span></p>
+                <p><strong>Email:</strong> <span class="text-secondary">{{ user.email }}</span></p>
+                <p><strong>Date of Birth:</strong> <span class="text-secondary">{{ user.profile.date_of_birth }}</span></p>
+                <p><strong>Address:</strong> <span class="text-secondary">{{ user.profile.address }}</span></p>
+                <p><strong>City/Town:</strong> <span class="text-secondary">{{ user.profile.city_or_town }}</span></p>
+                <p><strong>Country:</strong> <span class="text-secondary">{{ user.profile.country }}</span></p><br>
+            </div>
+            
         </div>
     </div>
     <form method="POST" enctype="multipart/form-data">
