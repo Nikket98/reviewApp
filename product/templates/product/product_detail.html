@@ -29,7 +29,7 @@
       <div class="mb-4">
         
         <!-- Read more button -->
-        <h3>{{ review.author.username }} ({{ review.rating }}&#11088;)</h3>
+        <h3>{{ review.author.username }} ({{ review.rating }}/5&#11088;)</h3>
         {% if review.author.profile.image.url %}
         <img src="{{ review.author.profile.image.url }}" alt="Author photo" class="rounded-circle" width="100">
         {% else %}
