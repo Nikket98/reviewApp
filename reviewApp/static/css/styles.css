@@ -127,6 +127,7 @@ a.article-title:hover {
 /* styles for row layout */
 .row {
   margin-top: 3rem;
+  
 }
 
 /* styles for columns in row layout */
@@ -371,4 +372,9 @@ body {
 .rounded-circle
 {
   margin-right: 2rem;
+}
+.card-deck {
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
