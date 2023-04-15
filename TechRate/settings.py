@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'product',
     'django_countries',
     'rest_framework',
+    'api.apps.ApiConfig',
     
 ]
 
