@@ -18,7 +18,7 @@
 </head>
 
 <body>
-  <div class="container-fluid"style="max-width: 1200px;">
+  <div class="container-fluid"style="max-width: 2000px;min-height: calc(100vh - 80px);">
         <header class="site-header">
             <nav class="navbar navbar-expand-md navbar-dark bg-primary fixed-top">
 
@@ -62,7 +62,7 @@
               </div>
             {% endif %}
             
-            <!-- rest of the code, including the navbar -->
+            
             
             {% block content %}{% endblock %}
             </div>
@@ -78,11 +78,11 @@
    
     
   </body>
-<footer class="bg-light py-5"style="background-color: #333;">
+  <footer class="footer">
     <div class="container">
       <div class="row">
-        <div class="col-lg-8 mx-auto text-center">
-          <p class="text-muted small mb-4">&copy; 2023 TechRate. All rights reserved.</p>
+        <div class="col-lg-8 mx-auto text-center"><p>  </p>
+          <p class="text-muted small mb-4"><br>&copy; 2023 TechRate. All rights reserved.</p>
           <ul class="list-inline mb-0">
             <li class="list-inline-item">
               <a href="{% url 'privacy_policy' %}">Privacy Policy</a>
@@ -90,10 +90,11 @@
             <li class="list-inline-item">&middot;</li>
             <li class="list-inline-item">
               <a href="{% url 'terms' %}">Terms of Use</a>
-            </li>
+            </li><br>
           </ul>
         </div>
       </div>
     </div>
   </footer>
+  
 </html>
