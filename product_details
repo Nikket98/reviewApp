@@ -23,7 +23,7 @@
         <li><strong>Release Date:</strong> {{ product.release_date }}</li>
       </ul>
       
-      <!-- Reviews section -->
+      <!-- Reviews Section -->
       <h2 class="mb-4">Reviews</h2>
       {% for review in reviews %}
       <div class="mb-4">
