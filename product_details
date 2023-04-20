@@ -52,7 +52,7 @@
       <p>No reviews yet.</p>
       {% endfor %}
 
-      <!-- Review form -->
+      <!-- Review Form -->
       <h2 class="mb-4">Add a review</h2>
       {% if user.is_authenticated %}
       <form method="post">
