@@ -1,0 +1,70 @@
+{% extends "reviewApp/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="container my-5">
+  <div class="row">
+    
+    <!-- Product image -->
+    <div class="col-md-6">
+      
+      <!-- Product information -->
+      <img class="img-fluid rounded" src="{{ product.photo.url }}" alt="{{ product.name }}" />
+    </div>
+    <div class="col-md-6">
+
+      <h1 class="mb-4">{{ product.name }}</h1>
+      <p class="mb-4">{{ product.description }}</p>
+      <ul class="list-unstyled mb-4">
+        <li><strong>Brand:</strong> {{ product.brand }}</li>
+        <li><strong>Average Cost(GBP):</strong>£ {{ product.average_cost }}</li>
+        <li><strong>Category:</strong> {{ product.category }}</li>
+        <li><strong>Release Date:</strong> {{ product.release_date }}</li>
+      </ul>
+      
+      <!-- Reviews section -->
+      <h2 class="mb-4">Reviews</h2>
+      {% for review in reviews %}
+      <div class="mb-4">
+        
+        <!-- Read more button -->
+        <h3>{{ review.author.username }} ({{ review.rating }}/5&#11088;)</h3>
+        {% if review.author.profile.image.url %}
+        <img src="{{ review.author.profile.image.url }}" alt="Author photo" class="rounded-circle" width="100">
+        {% else %}
+        <img src="{% static 'images/blank-profile-picture-973460_960_720.webp' %}" alt="Default author photo"
+          class="rounded-circle" width="100">
+        {% endif %}
+
+        <p>{{ review.content }}</p>
+        <div class="btn-group-sm" role="group" aria-label="Review actions">
+          <p><a href="{% url 'review-detail' pk=review.pk %}" class="btn btn-primary mr-2">Read more</a></p>
+          
+          <!-- Update and delete buttons for the review author -->
+          {% if user == review.author %}
+          <p><a href="{% url 'update-review' pk=review.id %}" class="btn btn-warning mr-2">Update Review</a></p>
+          <a href="{% url 'delete-review' pk=review.id %}" class="btn btn-danger mr-2">Delete Review</a>
+          {% endif %}
+        </div>
+      </div>
+      {% empty %}
+      <p>No reviews yet.</p>
+      {% endfor %}
+
+      <!-- Review form -->
+      <h2 class="mb-4">Add a review</h2>
+      {% if user.is_authenticated %}
+      <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Submit review</button>
+      </form>
+      {% else %}
+      <p><a href="{% url 'login' %}" class="btn btn-primary">Log in</a> to add a review.</p>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% endblock %}
