@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 import os
 from pathlib import Path
-from storages.backends.azure_storage import AzureStorage
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -160,13 +160,8 @@ DEFAULT_PROFILE_IMAGE = 'path/to/default/profile/image.jpg'
 AZURE_ACCOUNT_NAME = 'reviewppstorage'
 AZURE_ACCOUNT_KEY = '0M7jB25Ptzm4DQ8sZtyTTU3YWaDV/S9qvFnNdaXjfLiE/qeS5nP8s918I/OiwBw0WTTINao5S6GS+ASt1MTrnw=='
 AZURE_CONTAINER = 'media'
-DEFAULT_FILE_STORAGE = 'storages.backends.azure_storage.AzureStorage'
-AZURE_CONNECTION_STRING=f'DefaultEndpointsProtocol=https;AccountName={AZURE_ACCOUNT_NAME};AccountKey={AZURE_ACCOUNT_KEY};EndpointSuffix=core.windows.net'
+
+
 # Set the base URL for media files
 MEDIA_URL = f'https://{AZURE_ACCOUNT_NAME}.blob.core.windows.net/{AZURE_CONTAINER}/'
 
-STATICFILES_STORAGE = 'storages.backends.azure_storage.AzureStorage'
-AZURE_STATIC_STORAGE_ACCOUNT_NAME = AZURE_ACCOUNT_NAME
-AZURE_STATIC_STORAGE_ACCOUNT_KEY = AZURE_ACCOUNT_KEY
-AZURE_STATIC_STORAGE_CONTAINER_NAME = AZURE_CONTAINER
-AZURE_STATIC_CONNECTION_STRING = AZURE_CONNECTION_STRING
