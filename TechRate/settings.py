@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'django_countries',
     'rest_framework',
     'api.apps.ApiConfig',
+    'storages',
     
 ]
 
@@ -155,4 +156,14 @@ MEDIA_URL = '/media/'
 # Default profile image
 DEFAULT_PROFILE_IMAGE = 'path/to/default/profile/image.jpg'
 
+# Azure Storage settings
+AZURE_ACCOUNT_NAME = 'reviewppstorage'
+AZURE_ACCOUNT_KEY = '0M7jB25Ptzm4DQ8sZtyTTU3YWaDV/S9qvFnNdaXjfLiE/qeS5nP8s918I/OiwBw0WTTINao5S6GS+ASt1MTrnw=='
+AZURE_CONTAINER = 'media'
+
+# Configure Django to use Azure Blob Storage for media files
+DEFAULT_FILE_STORAGE = 'storages.backends.azure_storage.AzureStorage'
+
+# Set the base URL for media files
+MEDIA_URL = f'https://{AZURE_ACCOUNT_NAME}.blob.core.windows.net/{AZURE_CONTAINER}/'
 
