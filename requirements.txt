@@ -6,4 +6,4 @@ sqlparse==0.4.3
 whitenoise==6.4.0
 djangorestframework
 django-countries==7.5.1
-
+django-storages
