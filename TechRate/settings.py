@@ -162,3 +162,6 @@ AZURE_ACCOUNT_KEY = '0M7jB25Ptzm4DQ8sZtyTTU3YWaDV/S9qvFnNdaXjfLiE/qeS5nP8s918I/O
 AZURE_CONTAINER = 'media'
 
 
+# Set the base URL for media files
+MEDIA_URL = f'https://{AZURE_ACCOUNT_NAME}.blob.core.windows.net/{AZURE_CONTAINER}/'
+
