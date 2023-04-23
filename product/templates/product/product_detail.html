@@ -39,12 +39,12 @@
 
         <p>{{ review.content }}</p>
         <div class="btn-group-sm" role="group" aria-label="Review actions">
-          <p><a href="{% url 'review-detail' pk=review.pk %}" class="btn btn-primary mr-2">Read more</a></p>
+          <p><a href="{% url 'product:review-detail' pk=review.pk %}" class="btn btn-primary mr-2">Read more</a></p>
           
           <!-- Update and delete buttons for the review author -->
           {% if user == review.author %}
-          <p><a href="{% url 'update-review' pk=review.id %}" class="btn btn-warning mr-2">Update Review</a></p>
-          <a href="{% url 'delete-review' pk=review.id %}" class="btn btn-danger mr-2">Delete Review</a>
+          <p><a href="{% url 'product:update-review' pk=review.id %}" class="btn btn-warning mr-2">Update Review</a></p>
+          <a href="{% url 'product:delete-review' pk=review.id %}" class="btn btn-danger mr-2">Delete Review</a>
           {% endif %}
         </div>
       </div>
