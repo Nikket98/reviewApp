@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 import os
 from pathlib import Path
+from storages.backends.azure_storage import AzureStorage
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -164,4 +165,4 @@ AZURE_CONTAINER = 'media'
 
 # Set the base URL for media files
 MEDIA_URL = f'https://{AZURE_ACCOUNT_NAME}.blob.core.windows.net/{AZURE_CONTAINER}/'
-DEFAULT_FILE_STORAGE = 'storages.backends.azure_storage.AzureStorage'
+
