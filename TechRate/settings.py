@@ -165,7 +165,7 @@ AZURE_CONTAINER = 'media'
 
 # Set the base URL for media files
 MEDIA_URL = f'https://{AZURE_ACCOUNT_NAME}.blob.core.windows.net/{AZURE_CONTAINER}/'
-DEFAULT_FILE_STORAGE = 'storages.backends.azure_storage.AzureStorage'
+
 
 
 LOGGING = {
