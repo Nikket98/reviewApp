@@ -28,7 +28,7 @@ DEBUG = True
 DEBUG = 'WEBSITE_HOSTNAME' not in os.environ
 
 if DEBUG:
-    ALLOWED_HOSTS = []
+    ALLOWED_HOSTS = ['*']
 else:
     ALLOWED_HOSTS = [os.environ['WEBSITE_HOSTNAME']]
     CSRF_TRUSTED_ORIGINS = ['https://' + os.environ['WEBSITE_HOSTNAME']]
@@ -166,3 +166,23 @@ AZURE_CONTAINER = 'media'
 # Set the base URL for media files
 MEDIA_URL = f'https://{AZURE_ACCOUNT_NAME}.blob.core.windows.net/{AZURE_CONTAINER}/'
 DEFAULT_FILE_STORAGE = 'storages.backends.azure_storage.AzureStorage'
+
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': 'debug.log',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['file'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+    },
+}
