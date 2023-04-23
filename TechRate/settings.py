@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ['SECRET_KEY']
-
+DEBUG = True
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'WEBSITE_HOSTNAME' not in os.environ
 
@@ -165,4 +165,4 @@ AZURE_CONTAINER = 'media'
 
 # Set the base URL for media files
 MEDIA_URL = f'https://{AZURE_ACCOUNT_NAME}.blob.core.windows.net/{AZURE_CONTAINER}/'
-
+DEFAULT_FILE_STORAGE = 'storages.backends.azure_storage.AzureStorage'
