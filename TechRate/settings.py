@@ -28,7 +28,7 @@ SECRET_KEY = os.environ['SECRET_KEY']
 DEBUG = 'WEBSITE_HOSTNAME' not in os.environ
 
 if DEBUG:
-    ALLOWED_HOSTS = ['*']
+    ALLOWED_HOSTS = []
 else:
     ALLOWED_HOSTS = [os.environ['WEBSITE_HOSTNAME']]
     CSRF_TRUSTED_ORIGINS = ['https://' + os.environ['WEBSITE_HOSTNAME']]
