@@ -7,5 +7,5 @@ whitenoise==6.4.0
 djangorestframework
 django-countries==7.5.1
 django-storages[azure]
-sendgrid==6.10.0
+sendgrid
 
