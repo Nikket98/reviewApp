@@ -13,6 +13,9 @@ from django.contrib import messages
 from django.http import HttpResponseNotAllowed
 from django.shortcuts import get_object_or_404
 from .forms import ProfileUpdateForm
+from django.conf import settings
+from sendgrid import SendGridAPIClient
+from sendgrid.helpers.mail import Mail
 
 def register(request):
     if request.method == 'POST':
@@ -24,6 +27,8 @@ def register(request):
             profile.security_question = form.cleaned_data['security_question']
             profile.security_answer = form.cleaned_data['security_answer']
             profile.save()
+            send_registration_email(user.email)
+
             messages.success(
                 request, f'Your account has been created! Now you can login!')
 
@@ -36,7 +41,22 @@ def register(request):
         form = UserRegisterForm()
         return render(request, 'users/register.html', {'form': form, 'title': 'Register'})
 
-
+def send_registration_email(user_email):
+    message = Mail(
+        from_email=settings.DEFAULT_FROM_EMAIL,
+        to_emails=user_email,
+        subject='Registration successful',
+        html_content='<h1>Welcome to our app!</h1><p>Your registration was successful. You can now log in to your account.</p>'
+    )
+    try:
+        sg = SendGridAPIClient(settings.SENDGRID_API_KEY)
+        response = sg.send(message)
+        print(response.status_code)
+        print(response.body)
+        print(response.headers)
+    except Exception as e:
+        print(e)
+        
 def reset_password(request, user_id):
     user = get_object_or_404(User, id=user_id)
     if request.method == 'POST':
@@ -119,3 +139,5 @@ def profile(request):
     }
 
     return render(request, 'users/profile.html', context)
+
+

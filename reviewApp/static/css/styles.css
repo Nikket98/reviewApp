@@ -106,15 +106,17 @@ a.article-title:hover {
 /* styles for jumbotron section */
 .jumbotron {
   padding: 1rem;
-  margin-bottom: 0;
+ 
   margin-left: auto;
 }
 
 .jumbotron {
   color: #212529;
   padding: 3rem;
-  margin-bottom: 2rem;
+  
   background-color: #0a0e11;
+  margin-top: 0px;
+  display: block;
 }
 
 /* styles for jumbotron heading */

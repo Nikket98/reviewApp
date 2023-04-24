@@ -192,4 +192,12 @@ LOGGING = {
     },
 }
 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+SENDGRID_API_KEY = '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'
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_PORT = 465
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'apikey' 
+EMAIL_HOST_PASSWORD = SENDGRID_API_KEY
+DEFAULT_FROM_EMAIL = 'c2016830@my.shu.ac.uk'
 
