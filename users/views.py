@@ -16,6 +16,8 @@ from .forms import ProfileUpdateForm
 from django.conf import settings
 from sendgrid import SendGridAPIClient
 from sendgrid.helpers.mail import Mail
+from django.utils.html import strip_tags
+
 
 def register(request):
     if request.method == 'POST':
@@ -34,8 +36,13 @@ def register(request):
 
             return redirect('login')
         else:
-            messages.warning(request, f'Invalid input: {form.errors}')
-
+            error_message = form.errors
+            stripped_error_message = strip_tags(str(error_message))
+            formatted_error_message = ''
+            for field, errors in error_message.items():
+                for error in errors:
+                    formatted_error_message += f'{error}\n'
+            messages.warning(request, f'Invalid input:\n{formatted_error_message}')
             return redirect('reviewApp-home')
     else:
         form = UserRegisterForm()
@@ -56,7 +63,7 @@ def send_registration_email(user_email):
         print(response.headers)
     except Exception as e:
         print(e)
-        
+
 def reset_password(request, user_id):
     user = get_object_or_404(User, id=user_id)
     if request.method == 'POST':
@@ -113,6 +120,16 @@ def check_security_answer(request, user_id):
     else:
         return HttpResponseNotAllowed(['POST'])
    
+
+
+error_message = '<ul class="errorlist"><li>password2<ul class="errorlist"><li>The two password fields didn’t match.</li></ul></li></ul>'
+stripped_error_message = strip_tags(error_message)
+
+# Extract the error message from the stripped string
+error_message = stripped_error_message.split("The two password fields didn’t match.")[1]
+
+print(error_message)
+# Output: "The two password fields didn’t match."
 
 
 @login_required
