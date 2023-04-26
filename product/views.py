@@ -6,6 +6,7 @@ from django.views.generic import UpdateView, DeleteView
 from .forms import ReviewForm, ReviewUpdateForm
 from django.urls import reverse_lazy
 
+
 def product_detail(request, pk):
     product = get_object_or_404(Product, pk=pk)
     reviews = product.reviews.all()
@@ -17,7 +18,7 @@ def product_detail(request, pk):
             review.author = request.user
             review.product = product
             review.save()
-            return redirect('product-detail', pk=product.pk)
+            return redirect('product:product-detail', pk=product.pk)
     else:
         form = ReviewForm()
 
@@ -48,7 +49,7 @@ class ReviewUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
         return self.request.user == review.author
 
     def get_success_url(self):
-        return reverse_lazy('product-detail', kwargs={'pk': self.object.product.pk})
+        return reverse_lazy('product:product-detail', kwargs={'pk': self.object.product.pk})
 
 
 class ReviewDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
@@ -58,8 +59,11 @@ class ReviewDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     
 
     def get_success_url(self):
-        return reverse_lazy('product-detail', kwargs={'pk': self.object.product.pk})
+        return reverse_lazy('product:product-detail', kwargs={'pk': self.object.product.pk})
 
     def test_func(self):
         review = self.get_object()
         return self.request.user == review.author
+
+
+    

@@ -9,13 +9,13 @@
     <!-- This p element displays a message asking the user to confirm the deletion. -->
     <p>Are you sure you want to delete this review?</p>
     <!-- This form element defines the form for confirming the deletion. -->
-    <form method="post">
+    <form method="post" action="{% url 'product:delete-review' pk=review.pk %}">
         <!-- This csrf_token element is used to prevent cross-site request forgery. -->
         {% csrf_token %}
         <!-- This button element defines a button for confirming the deletion. -->
         <button type="submit" class="btn btn-danger">Yes, delete</button>
         <!-- This a element defines a link to cancel the deletion and go back to the product detail page. -->
-        <a href="{% url 'product-detail' pk=object.product.pk %}" class="btn btn-secondary">Cancel</a>
+        <a href="{% url 'product:product-detail' pk=object.product.pk %}" class="btn btn-secondary">Cancel</a>
     </form>
 </div>
 {% endblock %}

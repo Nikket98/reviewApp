@@ -1,6 +1,7 @@
 from django.urls import path, re_path, include
 from . import views
 from django.contrib import admin
+
 from .views import (
  
     ReviewUpdateView,
@@ -18,4 +19,5 @@ urlpatterns = [
     path('review/<int:pk>/delete/', ReviewDeleteView.as_view(), name='delete-review'),
     path('admin/', admin.site.urls),
     path('users/', include('users.urls')),
+    
 ]

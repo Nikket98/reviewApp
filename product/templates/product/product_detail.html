@@ -55,7 +55,9 @@
       <!-- Review form -->
       <h2 class="mb-4">Add a review</h2>
       {% if user.is_authenticated %}
-      <form method="post">
+      <form method="post" name="review_form" onsubmit="submitReview(event);">
+
+
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit" class="btn btn-primary">Submit review</button>
