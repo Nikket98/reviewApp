@@ -53,7 +53,7 @@ def send_registration_email(user_email):
         from_email=settings.DEFAULT_FROM_EMAIL,
         to_emails=user_email,
         subject='Registration successful',
-        html_content='<h1>Welcome to our app!</h1><p>Your registration was successful. You can now log in to your account.</p>'
+        html_content='<h1>Welcome to TechRate!</h1><p>Your registration was successful. You can now log in to your account.</p>'
     )
     try:
         sg = SendGridAPIClient(settings.SENDGRID_API_KEY)
